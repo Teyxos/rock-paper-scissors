@@ -1,12 +1,14 @@
 # TODO: While loop. Make the Rock Paper Scissors
 import random
 
+user_has_win = False
+
 
 def game():
-    user = get_choice()
-    machine = random.choice(["Rock", "Paper", "Scissors"])
+    user = get_choice().lower()
+    machine = random.choice(["Rock", "Paper", "Scissors"]).lower()
 
-    print(f"User: {user}. Me: {machine}")
+    print(check_winner(user, machine))
 
 
 def get_choice():
@@ -17,9 +19,14 @@ def get_choice():
 
 def check_winner(user, machine):
     if user == machine:
-        return "Tie"
-    elif user == "Rock" and machine == "Paper":
-        return "User wins!"
+        return "tie"
+    elif user == "rock" and machine == "scissors" or user == "paper" and machine == "rock" or user == "scissors" and \
+            machine == "paper":
+        return "user"
+    elif user == "rock" and machine == "paper" or user == "scissors" and machine == "paper" or user == "paper" and \
+            machine == "scissors":
+        return "machine"
 
 
-game()
+while not user_has_win:
+    game()
