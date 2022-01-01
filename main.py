@@ -8,12 +8,23 @@ def game():
     user = get_choice().lower()
     machine = random.choice(["Rock", "Paper", "Scissors"]).lower()
 
-    print(check_winner(user, machine))
+    winner = check_winner(user, machine)
+
+    if winner == "user":
+        user_has_win = True
+        print("Congratulations, you win!")
+    elif winner == "machine":
+        print("You lost :(")
 
 
 def get_choice():
-    answer = input('Choose one "Rock", "Paper", "Scissors"\n')
-
+    while 1:
+        answer = input('Choose one "Rock", "Paper", "Scissors"\n')
+        print(answer)
+        if not answer:
+            continue
+        else:
+            break
     return answer
 
 
