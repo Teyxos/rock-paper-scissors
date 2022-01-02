@@ -1,4 +1,4 @@
-# TODO: While loop. Make the Rock Paper Scissors
+# TODO: Print computer choice. Give option to exit when losing
 import random
 
 answers = {
@@ -18,10 +18,18 @@ def game():
         print("Congratulations, you win!")
     elif winner == "machine":
         print("You lost :(")
-        game()
+        answer = input("Do you want to exit? Yes or No\n").lower()
+        if answer == "yes":
+            exit(0)
+        else:
+            game()
     elif winner == "tie":
         print("Tie!")
-        game()
+        answer = input("Do you want to exit? Yes or No\n").lower()
+        if answer == "yes":
+            exit(0)
+        else:
+            game()
 
 
 def get_choice():
