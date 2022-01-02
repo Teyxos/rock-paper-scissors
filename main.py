@@ -1,4 +1,3 @@
-# TODO: Print computer choice. Give option to exit when losing
 import random
 
 answers = {
@@ -7,10 +6,18 @@ answers = {
     "scissors": 3
 }
 
+answers2 = {
+    1: "Rock",
+    2: "Paper",
+    3: "Scissors"
+}
+
 
 def game():
     user = get_choice()
     machine = answers[random.choice(["rock", "paper", "scissors"])]
+
+    print(f"You choose: {answers2[user]}\nI choose {answers2[machine]}")
 
     winner = check_winner(user, machine)
 
