@@ -2,15 +2,15 @@
 import random
 
 answers = {
-    "Rock": 1,
-    "Paper": 2,
-    "Scissors": 3
+    "rock": 1,
+    "paper": 2,
+    "scissors": 3
 }
 
 
 def game():
     user = get_choice()
-    machine = answers[random.choice(["Rock", "Paper", "Scissors"])]
+    machine = answers[random.choice(["rock", "paper", "scissors"])]
 
     winner = check_winner(user, machine)
 
@@ -25,9 +25,9 @@ def game():
 
 
 def get_choice():
-    answer = input('Choose one "Rock", "Paper", "Scissors"\n')
+    answer = input('Choose one "Rock", "Paper", "Scissors"\n').lower()
 
-    if answer == "Rock" or answer == "Paper" or answer == "Scissors":
+    if answer == "rock" or answer == "paper" or answer == "scissors":
         answer = answers[answer]
     else:
         answer = get_choice()
